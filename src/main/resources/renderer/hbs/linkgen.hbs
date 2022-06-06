@@ -1,0 +1,14 @@
+<script type="text/javascript" nonce="{{this.nonse}}">
+
+  window.onload = function() {
+    $("#header-support-menu ul.dropdown-menu.list.user-list").append('<li><a id="tenantSafeLinkGenerator" href="">Tenant Safe Link</a></li>');
+    var a = document.getElementById("tenantSafeLinkGenerator");
+    a.onclick = function() {
+      const url = new URL(window.location.href);
+      url.searchParams.set('forceAccountId', '{{this.accountId}}');
+      window.location = url.toString();
+      return false;
+    }
+  }
+  
+</script>
